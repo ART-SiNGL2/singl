@@ -1,0 +1,107 @@
+{	
+	"fieldDefinition":[
+		{
+			"fieldName" : "MEMNAME",
+			"matchType": "fuzzy",
+			"fields" : "MEMNAME ",
+			"dataType": "\"string\"" 
+		},
+	    {
+			"fieldName" : "DATEOFBIRTH",
+			"matchType": "fuzzy",
+			"fields" : "DATEOFBIRTH",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "Gender",
+			"matchType": "fuzzy",
+			"fields" : "Gender",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "MOBILENUMBER",
+			"matchType": "fuzzy",
+			"fields" : "MOBILENUMBER",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "BLOCK",
+			"matchType": "fuzzy",
+			"fields" : "BLOCK",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "PANCHAYATNAME",
+			"matchType": "DONT_USE",
+			"fields" : "PANCHAYATNAME",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "VILLAGENAME",
+			"matchType": "DONT_USE",
+			"fields" : "VILLAGENAME",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "RATIONCARDNUMBER",
+			"matchType": "fuzzy",
+			"fields" : "RATIONCARDNUMBER",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "RELATIONNAME",
+			"matchType": "DONT_USE",
+			"fields" : "RELATIONNAME",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "address",
+			"matchType": "fuzzy",
+			"fields" : "address",
+			"dataType": "\"string\"" 
+		},
+		{
+			"fieldName" : "FPSNAME",
+			"matchType": "DONT_USE",
+			"fields" : "FPSNAME",
+			"dataType": "\"string\"" 
+		}
+		],
+		"output" : [{
+		"name":"label", 
+		"format":"csv", 
+		"props": {
+			"location": "/tmp/zinggOutput",
+			"delimiter": ",",
+			"header":true
+			}
+		}],
+		"data" : [{
+		"name":"test", 
+		"format":"csv", 
+		"props": {
+			"location": "examples/febrl/testscenarios.csv",
+			"delimiter": ",",
+			"header":false					
+			},
+		"schema": 
+				"{\"type\" : \"struct\",
+				\"fields\" : [ 
+					{\"name\":\"id\", \"type\":\"string\", \"nullable\":false},
+					{\"name\":\"MEMNAME\",\"type\":\"string\",\"nullable\":true},
+					{\"name\":\"DATEOFBIRTH\", \"type\":\"string\", \"nullable\":true},
+					{\"name\":\"Gender\",\"type\":\"string\",\"nullable\":true},
+					{\"name\":\"MOBILENUMBER\", \"type\":\"string\", \"nullable\":true}, 
+					{\"name\":\"BLOCK\", \"type\":\"string\", \"nullable\":true}, 
+					{\"name\":\"PANCHAYATNAME\", \"type\":\"string\", \"nullable\":true},
+					{\"name\":\"VILLAGENAME\",\"type\":\"string\",\"nullable\":true},
+					{\"name\":\"RATIONCARDNUMBER\", \"type\":\"string\", \"nullable\":true}, 
+					{\"name\":\"RELATIONNAME\", \"type\":\"string\", \"nullable\":true},
+					{\"name\":\"address\", \"type\":\"string\", \"nullable\":true}, 
+					{\"name\":\"FPSNAME\", \"type\":\"string\", \"nullable\":true}
+				]
+			}"
+		}],
+		"labelDataSampleSize" : 0.5,
+		"numPartitions":1
+}
