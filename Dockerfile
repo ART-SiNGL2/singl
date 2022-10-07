@@ -6,9 +6,8 @@ ENV LANG C.UTF-8
 WORKDIR /
 USER root
 WORKDIR /singl-2.0-0.3.3-SNAPSHOT
-RUN curl --location https://github.com/zinggAI/zingg/releases/download/v0.3.3/zingg-0.3.3-SNAPSHOT-spark-3.1.2.tar.gz | \
+RUN curl --location https://github.com/ART-SiNGL2/singl/releases/download/v2.0-0.3.3/singl-2.0-0.3.3-SNAPSHOT-spark-3.1.2.tar.gz | \
 tar --extract --gzip --strip=1 
-RUN chmod -R a+rwx /zingg-2.0-0.3.3-SNAPSHOT/models
-RUN chown -R 1001 /zingg-2.0-0.3.3-SNAPSHOT/models
+RUN chmod -R a+rwx /singl-2.0-0.3.3-SNAPSHOT/models
+RUN chown -R 1001 /singl-2.0-0.3.3-SNAPSHOT/models
 USER 1001
-
